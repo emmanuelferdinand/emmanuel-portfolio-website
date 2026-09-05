@@ -1,8 +1,16 @@
 import { NextIntlClientProvider } from "next-intl";
 import type { Metadata } from "next";
 import { locale as getLocale } from "next/root-params";
+import { Inter, Instrument_Serif } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-instrument-serif",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +25,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[locale]">)
   const lang = await getLocale();
 
   return (
-    <html lang={lang}>
+    <html lang={lang} className={`${inter.variable} ${instrumentSerif.variable}`}>
       <body>
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
