@@ -3,6 +3,7 @@
 import { Moon, Sun } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { THEME_STORAGE_KEY } from "@/lib/theme";
+import { iconControlClassName } from "@/components/ui/iconControl";
 
 function toggleTheme() {
   const root = document.documentElement;
@@ -19,11 +20,7 @@ export function ThemeToggle() {
   const t = useTranslations("ThemeToggle");
 
   return (
-    <button
-      type="button"
-      onClick={toggleTheme}
-      className="inline-flex size-11 items-center justify-center rounded-full border border-stroke-strong transition-colors hover:bg-surface focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-    >
+    <button type="button" onClick={toggleTheme} className={iconControlClassName}>
       <Sun className="dark:hidden" />
       <Moon className="hidden dark:block" />
       <span className="sr-only">{t("label")}</span>
