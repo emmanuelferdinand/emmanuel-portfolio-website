@@ -1,5 +1,8 @@
 {
   "HomePage": {
     "title": "Welcome to Emmanuel's Portfolio!"
+  },
+  "ThemeToggle": {
+    "label": "Toggle theme"
   }
 }

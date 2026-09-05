@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { locale as getLocale } from "next/root-params";
 import { Inter, Instrument_Serif } from "next/font/google";
 import { routing } from "@/i18n/routing";
+import { applyStoredThemeScript } from "@/lib/theme";
 import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -27,6 +28,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[locale]">)
   return (
     <html lang={lang} className={`${inter.variable} ${instrumentSerif.variable}`}>
       <body>
+        <script dangerouslySetInnerHTML={{ __html: applyStoredThemeScript }} />
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
