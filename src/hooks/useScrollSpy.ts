@@ -1,15 +1,22 @@
 import { useEffect, useState } from "react";
 
+const READING_LINE_ROOT_MARGIN = "-30% 0px -69% 0px";
+
 export function useScrollSpy(ids: readonly string[]) {
   const [activeId, setActiveId] = useState<string>();
 
   useEffect(() => {
+    const idsUnderLine = new Set<string>();
+
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries.find((entry) => entry.isIntersecting);
-        if (visible) setActiveId(visible.target.id);
+        for (const entry of entries) {
+          if (entry.isIntersecting) idsUnderLine.add(entry.target.id);
+          else idsUnderLine.delete(entry.target.id);
+        }
+        setActiveId(ids.findLast((id) => idsUnderLine.has(id)));
       },
-      { rootMargin: "-20% 0px -70% 0px" },
+      { rootMargin: READING_LINE_ROOT_MARGIN },
     );
 
     for (const id of ids) {

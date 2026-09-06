@@ -3,6 +3,6 @@ interface ContainerProps {
   children: React.ReactNode;
 }
 
-export function Container({ className = "", children }: ContainerProps) {
+export function Container({ className = "", children }: Readonly<ContainerProps>) {
   return <div className={`mx-auto max-w-300 px-6 md:px-10 lg:px-16 ${className}`}>{children}</div>;
 }

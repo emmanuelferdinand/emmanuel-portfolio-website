@@ -6,11 +6,12 @@ import { useRef } from "react";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 import { sectionIds } from "@/lib/sections";
 import { Container } from "@/components/ui/Container";
-import { iconControlClassName } from "@/components/ui/iconControl";
 import { NavLinks } from "./NavLinks";
 import { ThemeToggle } from "./ThemeToggle";
 
 const MOBILE_MENU_ID = "mobile-menu";
+const menuButtonClassName =
+  "inline-flex size-11 items-center justify-center rounded-full text-muted transition hover:text-fg";
 
 export function Header() {
   const t = useTranslations("Nav");
@@ -21,12 +22,13 @@ export function Header() {
     label: t(id),
     isActive: id === activeId,
   }));
+  const closeMobileMenu = () => mobileMenuRef.current?.hidePopover();
 
   return (
     <header className="sticky top-0 z-50 border-b border-stroke bg-bg/80 backdrop-blur">
       <Container className="flex h-16 items-center justify-between">
-        <a href="#top" className="font-display text-2xl focus-ring">
-          EF
+        <a href="#top" className="font-display text-2xl leading-none transition hover:text-accent">
+          翁
         </a>
 
         <nav aria-label={t("label")} className="hidden lg:block">
@@ -38,7 +40,7 @@ export function Header() {
           <button
             type="button"
             popoverTarget={MOBILE_MENU_ID}
-            className={`${iconControlClassName} lg:hidden`}
+            className={`${menuButtonClassName} lg:hidden`}
           >
             <Menu />
             <span className="sr-only">{t("openMenu")}</span>
@@ -56,17 +58,13 @@ export function Header() {
           type="button"
           popoverTarget={MOBILE_MENU_ID}
           popoverTargetAction="hide"
-          className={`${iconControlClassName} self-end`}
+          className={`${menuButtonClassName} self-end`}
         >
           <X />
           <span className="sr-only">{t("closeMenu")}</span>
         </button>
         <nav aria-label={t("label")} className="mt-8">
-          <NavLinks
-            links={links}
-            className="flex flex-col text-2xl"
-            onNavigate={() => mobileMenuRef.current?.hidePopover()}
-          />
+          <NavLinks links={links} className="flex flex-col text-2xl" onNavigate={closeMobileMenu} />
         </nav>
       </div>
     </header>

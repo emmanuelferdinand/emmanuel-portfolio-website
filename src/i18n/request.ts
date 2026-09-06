@@ -16,6 +16,7 @@ export default getRequestConfig(async ({ locale }) => {
 
   return {
     locale,
+    timeZone: "Asia/Taipei",
     messages: (await import(`../../messages/${locale}.json`)).default,
   };
 });

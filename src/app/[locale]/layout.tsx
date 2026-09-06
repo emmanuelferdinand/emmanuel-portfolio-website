@@ -13,6 +13,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
   weight: "400",
+  style: ["normal", "italic"],
   variable: "--font-instrument-serif",
 });
 
@@ -33,6 +34,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[locale]">)
     <html
       lang={lang}
       className={`${inter.variable} ${instrumentSerif.variable} scroll-pt-20 scroll-smooth motion-reduce:scroll-auto`}
+      suppressHydrationWarning
     >
       <body>
         <script dangerouslySetInnerHTML={{ __html: applyStoredThemeScript }} />
