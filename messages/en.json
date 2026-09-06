@@ -1,0 +1,78 @@
+{
+  "Layout": {
+    "skipToContent": "Skip to content"
+  },
+  "Nav": {
+    "label": "Main",
+    "experience": "Experience",
+    "tech-stack": "Tech stack",
+    "workflow": "Workflow",
+    "education": "Education",
+    "hobby": "Hobby",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "Footer": {
+    "copyright": "© {year} {name}"
+  },
+  "ThemeToggle": {
+    "label": "Toggle theme"
+  },
+  "LocaleSwitcher": {
+    "label": "Switch language"
+  },
+  "Hero": {
+    "intro": "Based in <strong>{location}</strong>.",
+    "seeExperience": "See experience",
+    "contact": "Contact me",
+    "scroll": "Scroll"
+  },
+  "Sections": {
+    "experience": {
+      "eyebrow": "Experience",
+      "title": "Where I've worked"
+    },
+    "tech-stack": {
+      "eyebrow": "Tech stack",
+      "title": "Tools I reach for"
+    },
+    "workflow": {
+      "eyebrow": "Workflow",
+      "title": "How I ship"
+    },
+    "education": {
+      "eyebrow": "Education",
+      "title": "Where I studied"
+    },
+    "hobby": {
+      "eyebrow": "Off the clock",
+      "title": "Beyond the terminal"
+    },
+    "contact": {
+      "emailMe": "Email me"
+    }
+  },
+  "DateRange": {
+    "present": "Present"
+  },
+  "TechStack": {
+    "groups": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "data": "Data",
+      "devops": "DevOps & Cloud",
+      "other": "Other"
+    }
+  },
+  "Education": {
+    "graduationProject": "Graduation project",
+    "languages": "Languages",
+    "certifications": "Certifications"
+  },
+  "Social": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Email"
+  }
+}
