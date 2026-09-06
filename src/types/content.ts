@@ -8,6 +8,8 @@ export interface Profile {
   headline: Localized;
   location: Localized;
   summary: Localized;
+  // Under 155 characters so search snippets and social cards do not truncate it.
+  metaDescription: Localized;
 }
 
 // Dates are YYYY-MM and a null end means present.
