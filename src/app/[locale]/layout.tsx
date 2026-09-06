@@ -25,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(SITE_URL),
     title: `${profile.name} · ${profile.headline[locale]}`,
-    description: profile.summary[locale],
+    description: profile.metaDescription[locale],
     alternates: {
       canonical: locale === routing.defaultLocale ? "/" : `/${locale}`,
       languages: { en: "/", "zh-TW": "/zh-TW" },
@@ -33,7 +33,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       type: "profile",
       title: profile.name,
-      description: profile.summary[locale],
+      description: profile.metaDescription[locale],
       siteName: profile.name,
       locale,
     },
