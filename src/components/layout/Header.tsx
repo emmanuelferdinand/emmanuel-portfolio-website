@@ -6,6 +6,7 @@ import { useRef } from "react";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 import { sectionIds } from "@/lib/sections";
 import { Container } from "@/components/ui/Container";
+import { LocaleSwitcher } from "./LocaleSwitcher";
 import { NavLinks } from "./NavLinks";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -26,7 +27,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-stroke bg-bg/80 backdrop-blur">
-      <Container className="flex h-16 items-center justify-between">
+      <Container className="grid h-16 grid-cols-[1fr_auto_1fr] items-center">
         <a href="#top" className="font-display text-2xl leading-none transition hover:text-accent">
           翁
         </a>
@@ -35,8 +36,11 @@ export function Header() {
           <NavLinks links={links} className="flex" />
         </nav>
 
-        <div className="flex items-center gap-2">
-          <ThemeToggle />
+        <div className="col-start-3 flex items-center gap-2 justify-self-end">
+          <div className="hidden items-center gap-2 lg:flex">
+            <LocaleSwitcher />
+            <ThemeToggle />
+          </div>
           <button
             type="button"
             popoverTarget={MOBILE_MENU_ID}
@@ -66,6 +70,10 @@ export function Header() {
         <nav aria-label={t("label")} className="mt-8">
           <NavLinks links={links} className="flex flex-col text-2xl" onNavigate={closeMobileMenu} />
         </nav>
+        <div className="mt-auto flex items-center gap-4 border-t border-stroke pt-6">
+          <LocaleSwitcher />
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );

@@ -2,7 +2,12 @@
 
 import { Moon, Sun } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
+import { useEffect, useLayoutEffect } from "react";
 import { THEME_STORAGE_KEY } from "@/lib/theme";
+
+// Runs before paint so the theme never flashes.
+const useBeforePaintEffect = typeof window === "undefined" ? useEffect : useLayoutEffect;
 
 function toggleTheme() {
   const root = document.documentElement;
@@ -17,6 +22,13 @@ function toggleTheme() {
 
 export function ThemeToggle() {
   const t = useTranslations("ThemeToggle");
+  const pathname = usePathname();
+
+  // Resolve persistent theme.
+  useBeforePaintEffect(() => {
+    const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+    if (storedTheme) document.documentElement.dataset.theme = storedTheme;
+  }, [pathname]);
 
   return (
     <button
