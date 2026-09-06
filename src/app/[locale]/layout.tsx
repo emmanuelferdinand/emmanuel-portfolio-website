@@ -33,6 +33,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[locale]">)
     <html
       lang={lang}
       className={`${inter.variable} ${instrumentSerif.variable} scroll-pt-20 scroll-smooth motion-reduce:scroll-auto`}
+      suppressHydrationWarning
     >
       <body>
         <script dangerouslySetInnerHTML={{ __html: applyStoredThemeScript }} />

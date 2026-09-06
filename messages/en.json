@@ -14,9 +14,63 @@
     "closeMenu": "Close menu"
   },
   "Footer": {
+    "copyright": "© {year} {name}",
     "source": "Source on GitHub"
   },
   "ThemeToggle": {
     "label": "Toggle theme"
+  },
+  "Hero": {
+    "greeting": "Hi, I'm",
+    "seeExperience": "See experience",
+    "contact": "Contact me"
+  },
+  "Sections": {
+    "experience": {
+      "eyebrow": "Experience",
+      "title": "Where I've worked"
+    },
+    "tech-stack": {
+      "eyebrow": "Tech stack",
+      "title": "Tools I reach for"
+    },
+    "workflow": {
+      "eyebrow": "Workflow",
+      "title": "How I ship",
+      "description": "Hover or tap a step to see what happens there."
+    },
+    "education": {
+      "eyebrow": "Education",
+      "title": "Where I studied"
+    },
+    "hobby": {
+      "eyebrow": "Off the clock",
+      "title": "Beyond the terminal"
+    },
+    "contact": {
+      "eyebrow": "Contact",
+      "title": "Let's talk"
+    }
+  },
+  "Experience": {
+    "present": "Present"
+  },
+  "TechStack": {
+    "groups": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "data": "Data",
+      "devops": "DevOps & Cloud",
+      "other": "Other"
+    }
+  },
+  "Education": {
+    "languages": "Languages",
+    "certifications": "Certifications"
+  },
+  "Social": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Email"
   }
 }
