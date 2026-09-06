@@ -4,5 +4,6 @@ import { routing } from "./i18n/routing";
 export default createMiddleware(routing);
 
 export const config = {
-  matcher: "/((?!api|trpc|_next|_vercel|.*\\..*).*)",
+  // Social crawlers do not follow image redirects, so opengraph-image must serve directly
+  matcher: "/((?!api|trpc|_next|_vercel|.*opengraph-image|.*\\..*).*)",
 };
