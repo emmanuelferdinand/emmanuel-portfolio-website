@@ -1,4 +1,4 @@
-const EMAIL_ADDRESS = "emmanuelferdinand42@gmail.com";
+export const EMAIL_ADDRESS = "emmanuelferdinand42@gmail.com";
 
 export const socialLinks = {
   github: "https://github.com/emmanuelferdinand",
