@@ -8,7 +8,8 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: isCI,
   retries: isCI ? 2 : 0,
-  reporter: isCI ? "github" : "list",
+  // Github annotates the PR but writes no files, so the HTML report is what gets uploaded.
+  reporter: isCI ? [["github"], ["html", { open: "never" }]] : "list",
   use: { baseURL: BASE_URL, trace: "on-first-retry" },
   projects: [
     { name: "desktop", use: devices["Desktop Chrome"] },
