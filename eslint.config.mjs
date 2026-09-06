@@ -11,7 +11,14 @@ const eslintConfig = defineConfig([
     rules: jsxA11y.flatConfigs.recommended.rules,
   },
 
-  globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts"]),
+  globalIgnores([
+    ".next/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+    "test-results/**",
+    "playwright-report/**",
+  ]),
 ]);
 
 export default eslintConfig;
