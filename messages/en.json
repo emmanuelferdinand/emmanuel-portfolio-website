@@ -1,6 +1,20 @@
 {
-  "HomePage": {
-    "title": "Welcome to Emmanuel's Portfolio!"
+  "Layout": {
+    "skipToContent": "Skip to content"
+  },
+  "Nav": {
+    "label": "Main",
+    "experience": "Experience",
+    "tech-stack": "Tech stack",
+    "workflow": "Workflow",
+    "education": "Education",
+    "hobby": "Hobby",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "Footer": {
+    "source": "Source on GitHub"
   },
   "ThemeToggle": {
     "label": "Toggle theme"

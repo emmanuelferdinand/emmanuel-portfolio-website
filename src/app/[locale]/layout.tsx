@@ -1,9 +1,12 @@
 import { NextIntlClientProvider } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { locale as getLocale } from "next/root-params";
 import { Inter, Instrument_Serif } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import { applyStoredThemeScript } from "@/lib/theme";
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
 import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -24,12 +27,26 @@ export function generateStaticParams() {
 
 export default async function RootLayout({ children }: LayoutProps<"/[locale]">) {
   const lang = await getLocale();
+  const t = await getTranslations("Layout");
 
   return (
-    <html lang={lang} className={`${inter.variable} ${instrumentSerif.variable}`}>
+    <html
+      lang={lang}
+      className={`${inter.variable} ${instrumentSerif.variable} scroll-pt-20 scroll-smooth motion-reduce:scroll-auto`}
+    >
       <body>
         <script dangerouslySetInnerHTML={{ __html: applyStoredThemeScript }} />
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50"
+          >
+            {t("skipToContent")}
+          </a>
+          <Header />
+          <main id="main">{children}</main>
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

@@ -1,29 +1,10 @@
-import { GitHubIcon } from "@/components/icons/GitHubIcon";
-import { IconLink } from "@/components/ui/IconLink";
-import { LinkButton } from "@/components/ui/LinkButton";
-import { Pill } from "@/components/ui/Pill";
 import { Section } from "@/components/ui/Section";
-import { ThemeToggle } from "@/components/layout/ThemeToggle";
+import { sectionIds } from "@/lib/sections";
 
 export default function HomePage() {
-  return (
-    <main>
-      <Section
-        id="showcase"
-        eyebrow="WELCOME"
-        title="EMMANUEL FERDINAND ANGGAWIRJA"
-        description="Full-stack engineer"
-      >
-        <div className="flex flex-wrap items-center gap-4">
-          <ThemeToggle />
-          <IconLink href="https://github.com/emmanuelferdinand" label="GitHub" icon={GitHubIcon} />
-          <LinkButton href="#showcase">Solid</LinkButton>
-          <LinkButton href="#showcase" variant="outline">
-            Outline
-          </LinkButton>
-          <Pill>Pill</Pill>
-        </div>
-      </Section>
-    </main>
-  );
+  return sectionIds.map((id) => (
+    <Section key={id} id={id} eyebrow="Step 10" title={id}>
+      <div className="h-96" />
+    </Section>
+  ));
 }
