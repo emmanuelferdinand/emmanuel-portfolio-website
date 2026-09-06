@@ -5,12 +5,12 @@ interface NavLink {
 }
 
 interface NavLinksProps {
-  links: NavLink[];
+  links: readonly NavLink[];
   className?: string;
   onNavigate?: () => void;
 }
 
-export function NavLinks({ links, className = "", onNavigate }: NavLinksProps) {
+export function NavLinks({ links, className = "", onNavigate }: Readonly<NavLinksProps>) {
   return (
     <ul className={`gap-8 ${className}`}>
       {links.map(({ href, label, isActive }) => (
@@ -19,7 +19,7 @@ export function NavLinks({ links, className = "", onNavigate }: NavLinksProps) {
             href={href}
             onClick={onNavigate}
             aria-current={isActive ? "location" : undefined}
-            className="text-sm text-muted focus-ring transition hover:text-fg aria-[current=location]:text-fg"
+            className="text-sm text-muted transition hover:text-fg aria-[current=location]:text-fg"
           >
             {label}
           </a>

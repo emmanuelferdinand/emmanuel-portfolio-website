@@ -1,7 +1,7 @@
 import type { Locale } from "next-intl";
 
 // Every prose field is keyed by locale, so adding a locale in routing.ts turns untranslated fields into a type error.
-export type Localized<T = string> = Record<Locale, T>;
+type Localized<T = string> = Record<Locale, T>;
 
 export interface Profile {
   name: string;
@@ -14,14 +14,15 @@ export interface Profile {
 export interface ExperienceEntry {
   id: string;
   title: Localized;
-  organization: Localized;
+  organization: string;
+  organizationLocalName?: string;
   start: string;
   end: string | null;
   highlights: Localized<string[]>;
   tags: string[];
 }
 
-export type SkillGroupId = "frontend" | "backend" | "data" | "devops" | "other";
+type SkillGroupId = "frontend" | "backend" | "data" | "devops" | "other";
 
 export interface SkillGroup {
   id: SkillGroupId;
@@ -40,6 +41,18 @@ export interface EducationEntry {
   start: string;
   end: string;
   highlights: Localized<string[]>;
+}
+
+export interface Project {
+  title: Localized;
+  highlights: Localized<string[]>;
+  tags: string[];
+}
+
+export interface ContactHeadline {
+  prefix: string;
+  rotatingWords: readonly string[];
+  suffix: string;
 }
 
 // Languages, certifications and hobbies share this shape.

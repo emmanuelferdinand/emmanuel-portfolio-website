@@ -1,10 +1,21 @@
-import { Section } from "@/components/ui/Section";
-import { sectionIds } from "@/lib/sections";
+import { Contact } from "@/components/sections/Contact";
+import { Education } from "@/components/sections/Education";
+import { Experience } from "@/components/sections/Experience";
+import { Hero } from "@/components/sections/Hero";
+import { Hobbies } from "@/components/sections/Hobbies";
+import { TechStack } from "@/components/sections/TechStack";
+import { Workflow } from "@/components/sections/Workflow";
 
 export default function HomePage() {
-  return sectionIds.map((id) => (
-    <Section key={id} id={id} eyebrow="Step 10" title={id}>
-      <div className="h-96" />
-    </Section>
-  ));
+  return (
+    <>
+      <Hero />
+      <Experience />
+      <TechStack />
+      <Workflow />
+      <Education />
+      <Hobbies />
+      <Contact />
+    </>
+  );
 }

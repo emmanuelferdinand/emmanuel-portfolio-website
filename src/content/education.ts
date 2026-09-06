@@ -1,4 +1,4 @@
-import type { EducationEntry, LabeledItem } from "@/types/content";
+import type { EducationEntry, LabeledItem, Project } from "@/types/content";
 
 export const education: EducationEntry = {
   institution: { en: "Asia University, Taiwan" },
@@ -13,13 +13,24 @@ export const education: EducationEntry = {
   },
 };
 
-export const languages: LabeledItem[] = [
-  { id: "indonesian", name: { en: "Indonesian" } },
+export const graduationProject: Project = {
+  title: { en: "Decentralized Supply Chain Management System" },
+  highlights: {
+    en: [
+      "Built a decentralized supply-chain marketplace with a team of three on Solidity smart contracts, React and Web3.js.",
+      "Implemented the full product lifecycle: listing, purchasing and on-chain payment settlement.",
+    ],
+  },
+  tags: ["Solidity", "React", "Web3.js", "Truffle", "Ganache"],
+};
+
+export const languages: readonly LabeledItem[] = [
+  { id: "indonesian", name: { en: "Indonesian" }, detail: { en: "Native" } },
   { id: "english", name: { en: "English" }, detail: { en: "TOEIC 985/990" } },
   { id: "chinese", name: { en: "Chinese" } },
 ];
 
-export const certifications: LabeledItem[] = [
+export const certifications: readonly LabeledItem[] = [
   {
     id: "aws-ccp",
     name: { en: "AWS Certified Cloud Practitioner" },

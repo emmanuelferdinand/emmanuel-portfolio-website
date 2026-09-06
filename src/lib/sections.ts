@@ -7,5 +7,3 @@ export const sectionIds = [
   "hobby",
   "contact",
 ] as const;
-
-export type SectionId = (typeof sectionIds)[number];

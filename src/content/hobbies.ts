@@ -1,7 +1,11 @@
 import type { LabeledItem } from "@/types/content";
 
-export const hobbies: LabeledItem[] = [
-  { id: "coffee", name: { en: "Coffee" }, detail: { en: "Brewing it as much as drinking it." } },
+export const hobbies: readonly LabeledItem[] = [
+  {
+    id: "coffee",
+    name: { en: "Coffee" },
+    detail: { en: "Love brewing it as much as drinking it." },
+  },
   {
     id: "basketball",
     name: { en: "Basketball" },

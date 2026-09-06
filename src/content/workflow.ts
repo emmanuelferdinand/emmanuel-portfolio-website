@@ -1,6 +1,6 @@
 import type { WorkflowStep } from "@/types/content";
 
-export const workflowSteps: WorkflowStep[] = [
+export const workflowSteps: readonly WorkflowStep[] = [
   {
     id: "requirement",
     title: { en: "Requirement" },
@@ -11,7 +11,7 @@ export const workflowSteps: WorkflowStep[] = [
   {
     id: "design",
     title: { en: "Design" },
-    detail: { en: "Sketch the data model, component boundaries and API shape." },
+    detail: { en: "Sketch the data model, UI components, and API shape." },
   },
   {
     id: "branch",

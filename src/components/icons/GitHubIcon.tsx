@@ -1,4 +1,4 @@
-/* Github icon, lucide-react ships no brand icons */
+// Github icon, lucide-react ships no brand icons
 export function GitHubIcon({ className }: { className?: string }) {
   return (
     <svg

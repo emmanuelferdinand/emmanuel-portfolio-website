@@ -4,16 +4,15 @@ interface SectionProps {
   id: string;
   eyebrow: string;
   title: string;
-  description?: string;
   children: React.ReactNode;
 }
 
-export function Section({ id, eyebrow, title, description, children }: SectionProps) {
+export function Section({ id, eyebrow, title, children }: Readonly<SectionProps>) {
   const titleId = `${id}-title`;
 
   return (
     <section id={id} aria-labelledby={titleId}>
-      <Container className="py-24 md:py-32">
+      <Container className="py-20 md:py-24">
         <p className="text-xs tracking-eyebrow text-muted uppercase">{eyebrow}</p>
         <h2
           id={titleId}
@@ -21,7 +20,6 @@ export function Section({ id, eyebrow, title, description, children }: SectionPr
         >
           {title}
         </h2>
-        {description && <p className="mt-4 max-w-xl text-muted">{description}</p>}
         <div className="mt-12">{children}</div>
       </Container>
     </section>

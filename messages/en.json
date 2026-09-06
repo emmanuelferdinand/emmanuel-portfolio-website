@@ -14,16 +14,16 @@
     "closeMenu": "Close menu"
   },
   "Footer": {
-    "copyright": "© {year} {name}",
-    "source": "Source on GitHub"
+    "copyright": "© {year} {name}"
   },
   "ThemeToggle": {
     "label": "Toggle theme"
   },
   "Hero": {
-    "greeting": "Hi, I'm",
+    "intro": "Based in <em>{location}</em>.",
     "seeExperience": "See experience",
-    "contact": "Contact me"
+    "contact": "Contact me",
+    "scroll": "Scroll"
   },
   "Sections": {
     "experience": {
@@ -36,8 +36,7 @@
     },
     "workflow": {
       "eyebrow": "Workflow",
-      "title": "How I ship",
-      "description": "Hover or tap a step to see what happens there."
+      "title": "How I ship"
     },
     "education": {
       "eyebrow": "Education",
@@ -48,11 +47,10 @@
       "title": "Beyond the terminal"
     },
     "contact": {
-      "eyebrow": "Contact",
-      "title": "Let's talk"
+      "emailMe": "Email me"
     }
   },
-  "Experience": {
+  "DateRange": {
     "present": "Present"
   },
   "TechStack": {
@@ -65,6 +63,7 @@
     }
   },
   "Education": {
+    "graduationProject": "Graduation project",
     "languages": "Languages",
     "certifications": "Certifications"
   },
