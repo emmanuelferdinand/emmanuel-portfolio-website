@@ -19,6 +19,9 @@
   "ThemeToggle": {
     "label": "Toggle theme"
   },
+  "LocaleSwitcher": {
+    "label": "Switch language"
+  },
   "Hero": {
     "intro": "Based in <strong>{location}</strong>.",
     "seeExperience": "See experience",

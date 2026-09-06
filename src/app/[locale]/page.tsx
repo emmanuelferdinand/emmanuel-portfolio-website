@@ -1,3 +1,4 @@
+import { useLocale } from "next-intl";
 import { profile } from "@/content/profile";
 import { EMAIL_ADDRESS, socialLinks } from "@/content/socialLinks";
 import { SITE_URL } from "@/lib/site";
@@ -9,17 +10,19 @@ import { Hobbies } from "@/components/sections/Hobbies";
 import { TechStack } from "@/components/sections/TechStack";
 import { Workflow } from "@/components/sections/Workflow";
 
-const personSchema = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: profile.name,
-  jobTitle: profile.headline.en,
-  email: EMAIL_ADDRESS,
-  url: SITE_URL,
-  sameAs: [socialLinks.github, socialLinks.linkedin],
-};
-
 export default function HomePage() {
+  const locale = useLocale();
+
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: profile.name,
+    jobTitle: profile.headline[locale],
+    email: EMAIL_ADDRESS,
+    url: SITE_URL,
+    sameAs: [socialLinks.github, socialLinks.linkedin],
+  };
+
   return (
     <>
       <script
