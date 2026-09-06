@@ -3,7 +3,9 @@ import { profile } from "@/content/profile";
 import { Container } from "@/components/ui/Container";
 import { LinkButton } from "@/components/ui/LinkButton";
 
-const renderEmphasis = (chunks: React.ReactNode) => <em className="font-display">{chunks}</em>;
+const renderLocation = (chunks: React.ReactNode) => (
+  <strong className="font-semibold">{chunks}</strong>
+);
 
 export function Hero() {
   const locale = useLocale();
@@ -16,8 +18,8 @@ export function Hero() {
         <h1 className="mt-4 font-display text-4xl leading-display tracking-tight text-balance sm:text-5xl md:mt-6 md:text-7xl lg:text-8xl">
           {profile.name}
         </h1>
-        <p className="mt-4 text-lg md:mt-6 md:text-2xl">
-          {t.rich("intro", { location: profile.location[locale], em: renderEmphasis })}
+        <p className="mt-4 font-tight text-lg font-light md:mt-6 md:text-2xl">
+          {t.rich("intro", { location: profile.location[locale], strong: renderLocation })}
         </p>
         <p className="mt-4 max-w-xl text-sm text-muted md:mt-6 md:text-base">
           {profile.summary[locale]}

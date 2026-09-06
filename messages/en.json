@@ -20,7 +20,7 @@
     "label": "Toggle theme"
   },
   "Hero": {
-    "intro": "Based in <em>{location}</em>.",
+    "intro": "Based in <strong>{location}</strong>.",
     "seeExperience": "See experience",
     "contact": "Contact me",
     "scroll": "Scroll"
